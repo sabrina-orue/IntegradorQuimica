@@ -1,28 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "TP Integrador";
 }
 
 <div class="text-center">
     <h1 class="">Trabajo integrador de Química</h1>
-    <p>¿Que deseas calcular?</p>
+    <p><b>¿Qué deseas calcular?</b></p>
 </div>
 <div class="row">
     <div class="text-center col-md-6" style="margin:00px">
 
         <h3 class="">Cinética</h3>
-        @*<button class="btn-primary">Concentracion</button>*@
-        @*button class="btn-primary">PH / POH</button>*@
-
         <p>
             <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Concentración</a>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">PH</button>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample2">POH</button>
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">PH</button>
+            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample2">POH</button>
 
         </p>
         <div class="col-md-12">
             <div class="collapse multi-collapse" id="multiCollapseExample1">
                 <div class="card card-body">
-                    <b>Para calcular la concentracion de una sustancia necesita ingresar los siguientes datos:</b>
+                    <b>Para calcular la concentración de una sustancia necesita ingresar los siguientes datos:</b>
                     <br />
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="molaridad" class="sr-only">Molaridad (M)</label>
@@ -31,11 +28,11 @@
 
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="cantidad" class="sr-only">Cantidad (ml)</label>
-                        <input type="text" class="form-control" id="cantidad" placeholder="Ingrese cantidad sustancia(ml)">
+                        <input type="text" class="form-control" id="cantidad" placeholder="Ingrese cantidad de Sustancia(ml)">
                     </div>
-                   <br />
+                    <br />
                     <div class="form-group mx-sm-3 mb-2">
-                        <button type="submit" onclick="Concentracion()" class="btn btn-primary mb-2">Calcular Concentración</button>
+                        <button type="submit" onclick="CalcularConcentracion()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular Concentración</button>
                     </div>
 
                 </div>
@@ -79,19 +76,17 @@
     </div>
 
     <div class="text-center col-md-6" style="margin:00px">
-       
+
         <h3 class="">Termodinámica</h3>
-
-
-          <p>
-            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseEntalpia" role="button" aria-expanded="false" aria-controls="multiCollapseEntalpia">Entalpia</a>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseEquilibrio" aria-expanded="false" aria-controls="multiCollapseEquilibrio">Equilibrio Termico</button>
+        <p>
+            <a class="btn btn-danger" data-toggle="collapse" href="#multiCollapseEntalpia" role="button" aria-expanded="false" aria-controls="multiCollapseEntalpia">Entalpía</a>
+            <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseEquilibrio" aria-expanded="false" aria-controls="multiCollapseEquilibrio">Equilibrio Térmico </button>
 
         </p>
         <div class="col-md-12">
             <div class="collapse multi-collapse" id="multiCollapseEntalpia">
                 <div class="card card-body">
-                    <b>Para calcular la Entalpia de una sustancia necesita ingresar los siguientes datos:</b>
+                    <b>Para calcular la Entalpía de una sustancia necesita ingresar los siguientes datos:</b>
 
                     <br />
                     <br />
@@ -100,7 +95,7 @@
                     <br />
                     <br />
                     <div class="form-group mx-sm-3 mb-2">
-                        <button type="submit" class="btn btn-primary mb-2">Calcular Entalpia</button>
+                        <button type="submit" class="btn btn-primary mb-2">Calcular Entalpía</button>
                     </div>
 
                 </div>
@@ -110,7 +105,7 @@
             <div class="collapse multi-collapse" id="multiCollapseEquilibrio">
                 <div class="card card-body">
 
-                    <b>Para calcular el Euilibrio Térmico entre dos sustancias necesitas ingresar los siguientes datos:</b>
+                    <b>Para calcular el Equilibrio Térmico entre dos sustancias necesitas ingresar los siguientes datos:</b>
                     <br />
 
                     <div id="Elemento1">
@@ -127,8 +122,8 @@
                         </div>
 
                         <div class="form-group mx-sm-3 mb-2">
-                            <label for="calorEsp" class="sr-only">Calor Especifico (°C)</label>
-                            <input type="text" class="form-control" id="calorEsp" placeholder="Calor Especifico (°C)" />
+                            <label for="calorEsp" class="sr-only">Calor Específico (°C)</label>
+                            <input type="text" class="form-control" id="calorEsp" placeholder="Calor Específico (°C)" />
                         </div>
                     </div>
                     <div id="Elemento2">
@@ -145,38 +140,45 @@
                         </div>
 
                         <div class="form-group mx-sm-3 mb-2">
-                            <label for="calorEsp2" class="sr-only">Calor Especifico (°C)</label>
-                            <input type="text" class="form-control" id="calorEsp2" placeholder="Calor Especifico (°C)" />
+                            <label for="calorEsp2" class="sr-only">Calor Específico (°C)</label>
+                            <input type="text" class="form-control" id="calorEsp2" placeholder="Calor Específico (°C)" />
                         </div>
                     </div>
 
 
                     <div class="form-group mx-sm-3 mb-2">
-                        <button type="submit" onclick="CalcularEquilibrio()" class="btn btn-primary mb-2">Calcular Equilibrio</button>
+                        <button type="button" onclick="CalcularEquilibrio()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular Equilibrio</button>
                     </div>
-
-
-                    <br />
-
                 </div>
             </div>
         </div>
-        
 
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="resultadoConcentracion">Hola</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-       @* <button class="btn-primary">Entalpia</button>*@
-        @*<button class="btn-primary">Equilibrio Térmico</button>*@
-
-    </div>
+</div>
 
 <script>
-    function Concentracion() {
+    function CalcularConcentracion() {
 
-        var mol= document.getElementById("molaridad").value;
+        var mol = document.getElementById("molaridad").value;
         var cant = document.getElementById("cantidad").value;
 
-        alert("molaridad: " + mol + "  cantidad: " + cant);
+        document.getElementById("resultadoConcentracion").innerHTML = "Molaridad: " + mol + "</br>Cantidad: " + cant;
+        document.getElementById("exampleModalLabel").innerHTML = "Concentración";
     }
 
 
@@ -192,11 +194,7 @@
 
         var resultado = ((cantElemento1 * calorElemento1 * tmpElemento1) + (cantElemento2 * calorElemento2 * tmpElemento2)) / ((cantElemento1 * calorElemento1) + (cantElemento2 * calorElemento2));
 
-
-        alert(" Resultado: " + resultado);
+        document.getElementById("resultadoConcentracion").innerHTML = resultado.toFixed(3).toString();
+        document.getElementById("exampleModalLabel").innerHTML = "Equilibrio Termico";
     }
-
-    
-
-
 </script>
