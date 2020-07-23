@@ -79,25 +79,69 @@
 
         <h3 class="">Termodinámica</h3>
         <p>
-            <a class="btn btn-danger" data-toggle="collapse" href="#multiCollapseEntalpia" role="button" aria-expanded="false" aria-controls="multiCollapseEntalpia">Entalpía</a>
+            <a class="btn btn-danger" data-toggle="collapse" href="#multiCollapseEntalpia" role="button" aria-expanded="false" aria-controls="multiCollapseEntalpia">Entalpía Estandar</a>
             <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#multiCollapseEquilibrio" aria-expanded="false" aria-controls="multiCollapseEquilibrio">Equilibrio Térmico </button>
 
         </p>
         <div class="col-md-12">
             <div class="collapse multi-collapse" id="multiCollapseEntalpia">
                 <div class="card card-body">
-                    <b>Para calcular la Entalpía de una sustancia necesita ingresar los siguientes datos:</b>
+                    <b>La Entalpía Estandar de una reaccion es el incremento entálpico de una reacción en la cual, tanto reactivos como productos están en condiciones estándar (p= 1 atm; T = 298 K = 25 oC; conc. = 1 M).</b>
+                    <b>Para calcularla se necesita ingresar los siguientes datos:</b>
 
                     <br />
-                    <br />
-
-                    <p>Agregar Formulario correspondiente</p>
-                    <br />
-                    <br />
-                    <div class="form-group mx-sm-3 mb-2">
-                        <button type="submit" class="btn btn-primary mb-2">Calcular Entalpía</button>
+                    
+                    <div id="Elemento1">
+                        <b>Reactivo A</b>
+                        <br />
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="entalpiaA" class="sr-only">Entalpia de formacion del reactivo A</label>
+                            <input type="text" class="form-control" id="entalpiaA" placeholder="Entalpía en kj/mol"  />
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="numeroMolA" class="sr-only">Numeros de moles de A</label>
+                            <input type="text" class="form-control" id="numeroMolA" placeholder="Numero de mol"  />
+                        </div>
                     </div>
-
+                    <div id="Elemento2">
+                        <b>Reactivo B</b>
+                        <br />
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="entalpiaB" class="sr-only">Entalpia de formacion del reactivo B</label>
+                            <input type="text" class="form-control" id="entalpiaB" placeholder="Entalpía en kj/mol"  />
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="numeroMolB" class="sr-only">Numeros de moles de B</label>
+                            <input type="text" class="form-control" id="numeroMolB" placeholder="Numero de mol"  />
+                        </div>
+                    </div>
+                    <div id="Elemento3">
+                        <b>Producto C</b>
+                        <br />
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="entalpiaC" class="sr-only">Entalpia de formacion del producto C</label>
+                            <input type="text" class="form-control" id="entalpiaC" placeholder="Entalpía en kj/mol"  />
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="numeroMolC" class="sr-only">Numeros de moles de C</label>
+                            <input type="text" class="form-control" id="numeroMolC" placeholder="Numero de mol"  />
+                        </div>
+                    </div>
+                    <div id="Elemento4">
+                        <b>Producto D</b>
+                        <br />
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="entalpiaD" class="sr-only">Entalpia de formacion del producto D</label>
+                            <input type="text" class="form-control" id="entalpiaD" placeholder="Entalpía en kj/mol"  />
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="numeroMolD" class="sr-only">Numeros de moles de D</label>
+                            <input type="text" class="form-control" id="numeroMolD" placeholder="Numero de mol"  />
+                        </div>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                      <button type="button" onclick="CalcularEntalpiaEstandar()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular Entalpia estandar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -196,5 +240,30 @@
 
         document.getElementById("resultadoConcentracion").innerHTML = resultado.toFixed(3).toString();
         document.getElementById("exampleModalLabel").innerHTML = "Equilibrio Termico";
+    }
+
+    function CalcularEntalpiaEstandar(){
+
+        var entalpiaA = parseFloat(document.getElementById("entalpiaA").value);
+        var numeroMolA = parseFloat(document.getElementById("numeroMolA").value);
+        
+        var entalpiaB = parseFloat(document.getElementById("entalpiaB").value);
+        var numeroMolB = parseFloat(document.getElementById("numeroMolB").value);
+
+        var entalpiaC = parseFloat(document.getElementById("entalpiaC").value);
+        var numeroMolC = parseFloat(document.getElementById("numeroMolC").value);
+
+        var entalpiaD = parseFloat(document.getElementById("entalpiaD").value);
+        var numeroMolD = parseFloat(document.getElementById("numeroMolD").value);
+
+        var resultado =(numeroMolC * entalpiaC) + (numeroMolD * entalpiaD) -((numeroMolA * entalpiaA) + (numeroMolB * entalpiaB) );
+        var sistemaEs;
+        if (resultado < 0){
+            sistemaEs = "Exotérmico"
+        }else{
+            sistemaEs = "Endotérmico"
+        }
+        document.getElementById("resultadoConcentracion").innerHTML = "Entalpía Estandar: " + resultado + "</br> El sistema es: " + sistemaEs;
+        document.getElementById("exampleModalLabel").innerHTML = "Entalpía Estandar";
     }
 </script>
