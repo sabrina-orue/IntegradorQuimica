@@ -19,6 +19,7 @@
         <div class="col-md-12">
             <div class="collapse multi-collapse" id="multiCollapseExample1">
                 <div class="card card-body">
+                    <b>La concentración química determina la proporción de soluto y solvente en una solución química. La concentración química es la cantidad en que se encuentran las sustancias que se disuelven (soluto) en relación a la o las sustancias que lo disuelven (solvente)</b>
                     <b>Para calcular la concentración de una sustancia necesita ingresar los siguientes datos:</b>
                     <br />
                     <div class="form-group mx-sm-3 mb-2">
@@ -42,9 +43,11 @@
             <div class="collapse multi-collapse" id="multiCollapseExample2">
                 <div class="card card-body">
                     <b>El pH es una medida de acidez o alcalinidad que indica la cantidad de iones de hidrógeno presentes en una solución o sustancia.</b>
+                    <b>El pOH es una medida de la basicidad o alcalinidad que indica la cantidad de aniones hidroxilo o iones hidróxido presentes en una solución o sustancia.</b>
+                    <br />
+
                     <b>Para calcularlo se necesita ingresar los siguientes datos:</b>
 
-                    <br />
 
                     <div id="Elemento1">
                         <b>Molalidad de la solucion</b>
@@ -265,8 +268,10 @@
 
         if (resultadoPH < 7) {
             sistemaEs = "ácida"
-        } else {
+        } else if (resultadoPH > 7) {
             sistemaEs = "básica"
+        } else {
+            sistemaEs = "neutra"
         }
 
         var resultadoPOH = 14 - resultadoPH;
