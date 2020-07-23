@@ -1,10 +1,14 @@
 ﻿@{
     ViewData["Title"] = "TP Integrador";
 }
+<div style="background-image:url('https://www.google.com/search?q=quimico&tbm=isch&ved=2ahUKEwjCxenfu-PqAhXcLLkGHfFQBIwQ2-cCegQIABAA&oq=quimico&gs_lcp=CgNpbWcQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BwgjEOoCECc6BAgjECc6BAgAEEM6BQgAELEDUP2QAVj6qwFg768BaAFwAHgCgAHKA4gBmQmSAQkyLjIuMC4xLjGYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABCsABAQ&sclient=img&ei=2Y4ZX4L1LtzZ5OUP8aGR4Ag&bih=625&biw=1349&rlz=1C1CHBF_esAR888AR888&hl=es#imgrc=qOJYwUq_pW0e8M&imgdii=kGQ3d22cVFCf3M')">
+</div>
+
 
 <div class="text-center">
     <h1 class="">Trabajo integrador de Química</h1>
     <p><b>¿Qué deseas calcular?</b></p>
+    <img src="~/img/imagen.jpg" width="250"/>
 </div>
 <div class="row">
     <div class="text-center col-md-6" style="margin:00px">
@@ -12,8 +16,7 @@
         <h3 class="">Cinética</h3>
         <p>
             <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Concentración</a>
-            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">PH</button>
-            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample2">POH</button>
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">PH/POH</button>
 
         </p>
         <div class="col-md-12">
@@ -46,38 +49,22 @@
 
                     <br />
 
-                     <div id="Elemento1">
+                    <div id="Elemento1">
                         <b>Molalidad de la solucion</b>
                         <br />
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="mol" class="sr-only">Molaridad (M</label>
-                            <input type="text" class="form-control" id="mol" placeholder="Ingrese valor de Molaridad (M)"  />
+                            <input type="text" class="form-control" id="mol" placeholder="Ingrese valor de Molaridad (M)" />
                         </div>
-                     
+
                     </div>
                     <div class="form-group mx-sm-3 mb-2">
-                      <button type="button" onclick="CalcularPH()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular el PH de la solucion </button>
+                        <button type="button" onclick="CalcularPH()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular pH y pOH </button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="collapse multi-collapse" id="multiCollapseExample3">
-                <div class="card card-body">
-                    <b>Para calcular el POH de una sustancia necesita ingresar los siguientes datos:</b>
-
-                    <br />
-                    <br />
-
-                    <p>Agregar Formulario correspondiente</p>
-                    <br />
-                    <br />
-                    <div class="form-group mx-sm-3 mb-2">
-                        <button type="submit" class="btn btn-primary mb-2">Calcular POH</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 
     </div>
 
@@ -96,17 +83,17 @@
                     <b>Para calcularla se necesita ingresar los siguientes datos:</b>
 
                     <br />
-                    
+
                     <div id="Elemento1">
                         <b>Reactivo A</b>
                         <br />
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="entalpiaA" class="sr-only">Entalpia de formacion del reactivo A</label>
-                            <input type="text" class="form-control" id="entalpiaA" placeholder="Entalpía en kj/mol"  />
+                            <input type="text" class="form-control" id="entalpiaA" placeholder="Entalpía en kj/mol" />
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="numeroMolA" class="sr-only">Numeros de moles de A</label>
-                            <input type="text" class="form-control" id="numeroMolA" placeholder="Numero de mol"  />
+                            <input type="text" class="form-control" id="numeroMolA" placeholder="Numero de mol" />
                         </div>
                     </div>
                     <div id="Elemento2">
@@ -114,11 +101,11 @@
                         <br />
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="entalpiaB" class="sr-only">Entalpia de formacion del reactivo B</label>
-                            <input type="text" class="form-control" id="entalpiaB" placeholder="Entalpía en kj/mol"  />
+                            <input type="text" class="form-control" id="entalpiaB" placeholder="Entalpía en kj/mol" />
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="numeroMolB" class="sr-only">Numeros de moles de B</label>
-                            <input type="text" class="form-control" id="numeroMolB" placeholder="Numero de mol"  />
+                            <input type="text" class="form-control" id="numeroMolB" placeholder="Numero de mol" />
                         </div>
                     </div>
                     <div id="Elemento3">
@@ -126,11 +113,11 @@
                         <br />
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="entalpiaC" class="sr-only">Entalpia de formacion del producto C</label>
-                            <input type="text" class="form-control" id="entalpiaC" placeholder="Entalpía en kj/mol"  />
+                            <input type="text" class="form-control" id="entalpiaC" placeholder="Entalpía en kj/mol" />
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="numeroMolC" class="sr-only">Numeros de moles de C</label>
-                            <input type="text" class="form-control" id="numeroMolC" placeholder="Numero de mol"  />
+                            <input type="text" class="form-control" id="numeroMolC" placeholder="Numero de mol" />
                         </div>
                     </div>
                     <div id="Elemento4">
@@ -138,15 +125,15 @@
                         <br />
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="entalpiaD" class="sr-only">Entalpia de formacion del producto D</label>
-                            <input type="text" class="form-control" id="entalpiaD" placeholder="Entalpía en kj/mol"  />
+                            <input type="text" class="form-control" id="entalpiaD" placeholder="Entalpía en kj/mol" />
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="numeroMolD" class="sr-only">Numeros de moles de D</label>
-                            <input type="text" class="form-control" id="numeroMolD" placeholder="Numero de mol"  />
+                            <input type="text" class="form-control" id="numeroMolD" placeholder="Numero de mol" />
                         </div>
                     </div>
                     <div class="form-group mx-sm-3 mb-2">
-                      <button type="button" onclick="CalcularEntalpiaEstandar()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular Entalpia estandar</button>
+                        <button type="button" onclick="CalcularEntalpiaEstandar()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular Entalpia estandar</button>
                     </div>
                 </div>
             </div>
@@ -220,14 +207,15 @@
         </div>
     </div>
 </div>
-
 <script>
     function CalcularConcentracion() {
 
-        var mol = document.getElementById("molaridad").value;
-        var cant = document.getElementById("cantidad").value;
+        var mol = parseFloat(document.getElementById("molaridad").value);
+        var cant = parseInt(document.getElementById("cantidad").value);
 
-        document.getElementById("resultadoConcentracion").innerHTML = "Molaridad: " + mol + "</br>Cantidad: " + cant;
+        var result = (cant * mol) / 1000;
+
+        document.getElementById("resultadoConcentracion").innerHTML = result;
         document.getElementById("exampleModalLabel").innerHTML = "Concentración";
     }
 
@@ -248,11 +236,11 @@
         document.getElementById("exampleModalLabel").innerHTML = "Equilibrio Termico";
     }
 
-    function CalcularEntalpiaEstandar(){
+    function CalcularEntalpiaEstandar() {
 
         var entalpiaA = parseFloat(document.getElementById("entalpiaA").value);
         var numeroMolA = parseFloat(document.getElementById("numeroMolA").value);
-        
+
         var entalpiaB = parseFloat(document.getElementById("entalpiaB").value);
         var numeroMolB = parseFloat(document.getElementById("numeroMolB").value);
 
@@ -262,28 +250,31 @@
         var entalpiaD = parseFloat(document.getElementById("entalpiaD").value);
         var numeroMolD = parseFloat(document.getElementById("numeroMolD").value);
 
-        var resultado =(numeroMolC * entalpiaC) + (numeroMolD * entalpiaD) -((numeroMolA * entalpiaA) + (numeroMolB * entalpiaB) );
+        var resultado = (numeroMolC * entalpiaC) + (numeroMolD * entalpiaD) - ((numeroMolA * entalpiaA) + (numeroMolB * entalpiaB));
         var sistemaEs;
-        if (resultado < 0){
+        if (resultado < 0) {
             sistemaEs = "Exotérmico"
-        }else{
+        } else {
             sistemaEs = "Endotérmico"
         }
         document.getElementById("resultadoConcentracion").innerHTML = "Entalpía Estandar: " + resultado + "</br> El sistema es: " + sistemaEs;
         document.getElementById("exampleModalLabel").innerHTML = "Entalpía Estandar";
     }
 
-    function CalcularPH(){
-        var mol = parseFloat(document.getElementById("mol").value);
+    function CalcularPH() {
+        var mol = document.getElementById("mol").value;
 
-        var resultado = -(Math.log10(mol));
+        var resultadoPH = -(Math.log10(mol));
 
-        if (resultado < 7){
+        if (resultadoPH < 7) {
             sistemaEs = "ácida"
-        }else{
+        } else {
             sistemaEs = "básica"
         }
-        document.getElementById("resultadoConcentracion").innerHTML = "El pH es : " + resultado + "</br> La solucion es: " + sistemaEs;;
-        document.getElementById("exampleModalLabel").innerHTML = "pH";
+
+        var resultadoPOH = 14 - resultadoPH;
+
+        document.getElementById("resultadoConcentracion").innerHTML = "El pH es : " + resultadoPH + "</br>  El pOH es:" + resultadoPOH + " </br> La solución es: " + sistemaEs;
+        document.getElementById("exampleModalLabel").innerHTML = "pH/pOH";
     }
 </script>
