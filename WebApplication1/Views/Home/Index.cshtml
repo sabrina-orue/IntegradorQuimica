@@ -41,16 +41,22 @@
         <div class="col-md-12">
             <div class="collapse multi-collapse" id="multiCollapseExample2">
                 <div class="card card-body">
-                    <b>Para calcular el PH de una sustancia necesita ingresar los siguientes datos:</b>
+                    <b>El pH es una medida de acidez o alcalinidad que indica la cantidad de iones de hidrógeno presentes en una solución o sustancia.</b>
+                    <b>Para calcularlo se necesita ingresar los siguientes datos:</b>
 
                     <br />
-                    <br />
 
-                    <p>Agregar Formulario correspondiente</p>
-                    <br />
-                    <br />
+                     <div id="Elemento1">
+                        <b>Molalidad de la solucion</b>
+                        <br />
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="mol" class="sr-only">Molaridad (M</label>
+                            <input type="text" class="form-control" id="mol" placeholder="Ingrese valor de Molaridad (M)"  />
+                        </div>
+                     
+                    </div>
                     <div class="form-group mx-sm-3 mb-2">
-                        <button type="submit" class="btn btn-primary mb-2">Calcular PH</button>
+                      <button type="button" onclick="CalcularPH()" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal">Calcular el PH de la solucion </button>
                     </div>
                 </div>
             </div>
@@ -265,5 +271,19 @@
         }
         document.getElementById("resultadoConcentracion").innerHTML = "Entalpía Estandar: " + resultado + "</br> El sistema es: " + sistemaEs;
         document.getElementById("exampleModalLabel").innerHTML = "Entalpía Estandar";
+    }
+
+    function CalcularPH(){
+        var mol = parseFloat(document.getElementById("mol").value);
+
+        var resultado = -(Math.log10(mol));
+
+        if (resultado < 7){
+            sistemaEs = "ácida"
+        }else{
+            sistemaEs = "básica"
+        }
+        document.getElementById("resultadoConcentracion").innerHTML = "El pH es : " + resultado + "</br> La solucion es: " + sistemaEs;;
+        document.getElementById("exampleModalLabel").innerHTML = "pH";
     }
 </script>
