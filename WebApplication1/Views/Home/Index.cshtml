@@ -250,7 +250,8 @@
         var entalpiaD = parseFloat(document.getElementById("entalpiaD").value);
         var numeroMolD = parseFloat(document.getElementById("numeroMolD").value);
 
-        var resultado = (numeroMolC * entalpiaC) + (numeroMolD * entalpiaD) - ((numeroMolA * entalpiaA) + (numeroMolB * entalpiaB));
+        var resultado = (numeroMolC * entalpiaC) + (numeroMolD * entalpiaD) - (numeroMolA * entalpiaA) - (numeroMolB * entalpiaB);
+        console.log("resultado" , resultado)
         var sistemaEs;
         if (resultado < 0) {
             sistemaEs = "Exotérmico"
